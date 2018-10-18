@@ -13,7 +13,7 @@ def get_all_products():
     return jsonify(products_list), 200
 
 #admin can add a product
-@app.route('/api/v1/products/', methods = ['POST'])
+@app.route('/api/v1/products', methods = ['POST'])
 def post_product():
     data = request.get_json()
     product = {
@@ -27,11 +27,16 @@ def post_product():
 #admin/store attendant can get a specific product
 @app.route("/api/v1/products/<product_id>", methods=['GET'])
 def get_specific_product(product_id):
-    if len(products_list) != 0:
-        products = [product for product in products_list if product["product_id"]==product_id]
-        return jsonify({"message": products[0]})
-    else:
-        return jsonify({"message":"you  dont have product in the list yet"})
+    try:
+        if len(products_list) != 0:
+            products = [product for product in products_list if product["product_id"]==product_id]
+            return jsonify({"message": products[0]})
+        else:
+            return jsonify({"message":"you  dont have product in the list yet"}),200
+    except Exception as e:
+        print(e)
+        return jsonify({"message":"you  dont have product in the list yet"}),200
+    
 
 
 @app.route('/api/v1/sales/',methods = ['POST'])
@@ -41,7 +46,7 @@ def add_sale_order():
     sale_product = trades['sale_product']
     sale_total = trades['sale_total']    
     sale_orders.append(Transactions(sale_id,sale_product,sale_total))
-    return jsonify({"message": "sales added"}),200
+    return jsonify({"message": "sales added"}), 201
 
 #admin can get all sale order records
 @app.route('/api/v1/sales/', methods =['GET'])
