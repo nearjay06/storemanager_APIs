@@ -17,7 +17,7 @@ def get_all_products():
 def post_product():
     data = request.get_json()
     product = {
-      "product_id" : data['product_id'],
+      "product_id" :len(products_list)+1,
       "product_name": data['product_name'],
       "product_price": data['product_price']
     }
@@ -27,13 +27,12 @@ def post_product():
 #admin/store attendant can get a specific product
 @app.route("/api/v1/products/<product_id>", methods=['GET'])
 def get_specific_product(product_id):
- 
-    if product in products_list if ["product_id" ] == product_id]
-       return jsonify({"product": product})
+    if len(products_list) != 0:
+        products = [product for product in products_list if product["product_id"]==product_id]
+        return jsonify({"message": products[0]})
+    else:
+        return jsonify({"message":"you  dont have product in the list yet"})
 
- else:
-    return ({"message": "product not found"})
-    
 
 @app.route('/api/v1/sales/',methods = ['POST'])
 def add_sale_order():
