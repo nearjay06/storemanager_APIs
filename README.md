@@ -2,8 +2,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ae9d658eec87b2a9572/maintainability)](https://codeclimate.com/github/nearjay06/storemanager_APIs/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/9ae9d658eec87b2a9572/test_coverage)](https://codeclimate.com/github/nearjay06/storemanager_APIs/test_coverage)
-
 [![Build Status](https://travis-ci.org/nearjay06/storemanager_APIs.svg?branch=ft-endpoints)](https://travis-ci.org/nearjay06/storemanager_APIs)
 
 
