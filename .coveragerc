@@ -7,7 +7,4 @@ omit =
     */venv/*
     */home/travis/virtualenv/*
     */.pytest_cache/*
-    */renamed/*
-    */ignored/*
     */.vscode/*
-    */tests/*
