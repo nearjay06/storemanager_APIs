@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/nearjay06/storemanager_APIs/badge.svg?branch=master)](https://coveralls.io/github/nearjay06/storemanager_APIs?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nearjay06/storemanager_APIs/badge.svg?branch=ft-endpoints)](https://coveralls.io/github/nearjay06/storemanager_APIs?branch=ft-endpoints)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/9ae9d658eec87b2a9572/maintainability)](https://codeclimate.com/github/nearjay06/storemanager_APIs/maintainability)
 
