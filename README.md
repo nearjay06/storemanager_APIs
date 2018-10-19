@@ -1,3 +1,13 @@
+[![Coverage Status](https://coveralls.io/repos/github/nearjay06/storemanager_APIs/badge.svg?branch=master)](https://coveralls.io/github/nearjay06/storemanager_APIs?branch=master)
+
+
+
+
+
+
+
+
+
 create and test api endpoints to ensure that:
 An admin can add a product,
 An admin/store attendant can get all products,
@@ -9,5 +19,6 @@ Integrate TravisCI for Continuous Integration in your repository (with ReadMe ba
 Integrate test coverage reporting (e.g. Coveralls) with badge in the ReadMe.
 Obtain CI badges (e.g. from Code Climate and Coveralls) and add to ReadMe.
 Ensure the app gets hosted on Heroku.
+
 
 
