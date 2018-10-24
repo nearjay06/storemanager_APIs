@@ -47,27 +47,36 @@ def get_specific_product(product_id):
 @app.route('/api/v1/sales/',methods = ['POST'])
 def add_sale_order():
     
-    trades = request.get_json()     
-    sale_id = trades['sale_id']
-    sale_product = trades['sale_product']
-    sale_total = trades['sale_total']    
-    
-    if sale_orders == 0:
+    trades = request.get_json() 
+    sales ={    
+            "sale_id":trades["sale_id"],
+            "sale_product":trades["sale_product"],
+            "sale_total" :trades["sale_total"]
+        }   
+    if sales == 0:
         return jsonify({"message":"no input for sales"}),400
-    sale_orders.append(Transactions(sale_id,sale_product,sale_total))
+    sale_orders.append(sales)
     return jsonify({"message": "sale order record created"}), 201
-        
-    
-#admin can get all sale order records
+     
+ #admin can get all sale order records
 @app.route('/api/v1/sales/', methods =['GET'])
 def get_all_sales():
-    sale_orders =[]
     if sale_orders == []:
          return jsonify ({"message":"no sale records available"}),400
+
     return jsonify({"message":sale_orders}),200
 
+#admin/store attendant can get a specific sale order record
+@app.route("/api/v1/sales/<sale_id>", methods=['GET'])
+def get_specific_sale_order_record(sale_id):
+    for sale_id in sale_orders:
+        
+         return jsonify ({'sale_orders': sale_id}),200
 
-
+    sale_orders.append(sale_orders)
+    return jsonify({"message": "sale order record not found"}),400
+         
+    
 if __name__== '__main__':
  app.run(debug = True)
 
