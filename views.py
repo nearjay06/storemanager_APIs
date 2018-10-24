@@ -9,14 +9,13 @@ sale_orders=[]
 #admin can get all products
 @app.route('/api/v1/products/', methods=['GET']) 
 def get_all_products():
-    if products_list in products_list is None:
-        return jsonify({"message":" product list is empty"}),400
-    else:    
-        return jsonify(products_list), 200
+    if products_list == []:
+        return jsonify ({"message":"no products available"}),400
+        
+    return jsonify(products_list), 200
     
-
 #admin can add a product
-@app.route('/api/v1/products', methods = ['POST'])
+@app.route('/api/v1/products/', methods = ['POST'])
 def post_product():
     data = request.get_json()
     product = {
@@ -24,6 +23,9 @@ def post_product():
       "product_name": data['product_name'],
       "product_price": data['product_price']
     }
+    if "product_name" in product == 0:
+        return ({"message":"invalid inputs"}),400
+
     products_list.append(product)
     return jsonify ({"message": "product added"})
 
@@ -44,24 +46,25 @@ def get_specific_product(product_id):
     
 @app.route('/api/v1/sales/',methods = ['POST'])
 def add_sale_order():
+    
     trades = request.get_json()     
     sale_id = trades['sale_id']
     sale_product = trades['sale_product']
     sale_total = trades['sale_total']    
+    
+    if sale_orders == 0:
+        return jsonify({"message":"no input for sales"}),400
     sale_orders.append(Transactions(sale_id,sale_product,sale_total))
-    return jsonify({"message": "sales added"}), 201
+    return jsonify({"message": "sale order record created"}), 201
         
-
+    
 #admin can get all sale order records
 @app.route('/api/v1/sales/', methods =['GET'])
 def get_all_sales():
-    reply =[]
-    for sale_order in sale_orders:
-        if sale_order in sale_orders is None:
-         return jsonify ({"message":"no sale order records found"}),400
-        else:
-         reply.append(sale_order.return_sales_records())
-         return jsonify(reply)
+    sale_orders =[]
+    if sale_orders == []:
+         return jsonify ({"message":"no sale records available"}),400
+    return jsonify({"message":sale_orders}),200
 
 
 
