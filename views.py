@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request,abort
 app = Flask(__name__)
-from base.product_records import ProductsPoints
-from base.sales_records import Transactions
+from model.product_records import ProductsPoints
+from model.sales_records import Transactions
 
 products_list=[]
 sale_orders=[]

@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from endpoints import app
+from views import app
 
 
 class FlaskTest(unittest.TestCase):
