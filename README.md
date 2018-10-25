@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/nearjay06/storemanager_APIs.svg?branch=ft-endpoints)](https://travis-ci.org/nearjay06/storemanager_APIs)
 
 
-Project: APIs AND ENDPOINTS
+Store Manager Project: APIs AND ENDPOINTS
 - Create and test api endpoints to add a product,get all products,get a specific product with an ID,
   add a sale order, and get all sale order records.
 
