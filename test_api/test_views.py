@@ -15,13 +15,13 @@ class FlaskTest(unittest.TestCase):
 
 
   # def test_admin_can_add_product(self):
-  #   response = self.app.post('/api/v1/products',
-  #                            content_type="application/json",
-  #                             data=json.dumps(dict( product_name = "water",
-  #                                                   product_price = 800)))
-  #   response_json = json.loads(response.data.decode(encoding="UTF=8",))
-  #   self.assertEqual(response.status_code,200)
-  #   self.assertIn("product added", response_json['message'])
+    # response = self.app.post('/api/v1/products',
+    #                          content_type="application/json",
+    #                           data=json.dumps(dict( product_name = "water",
+    #                                                 product_price = 800)))
+    # response_json = json.loads(response.data.decode())
+    # self.assertEqual(response.status_code,200)
+    # self.assertIn("product added", response_json['message'])
 
 
   def test_get_specific_product(self):
