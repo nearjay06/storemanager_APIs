@@ -1,9 +1,10 @@
-from flask import Flask,app
-app = Flask(__name__)
+from flask import Flask
+from view import views
+# app = Flask(__name__)
 
    
 if __name__ =='__main__':
- app.run(debug=True, port=8080)
+ views.app.run(debug=True, port=8080)
 
 
 
