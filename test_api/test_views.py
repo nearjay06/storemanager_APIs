@@ -20,7 +20,7 @@ class FlaskTest(unittest.TestCase):
     #                           data=json.dumps(dict( product_name = "water",
     #                                                 product_price = 800)))
     # response_json = json.loads(response.data.decode())
-    # response_json = json.get_json
+    # response_json = json.get_json()
     # self.assertEqual(response.status_code,200)
     # self.assertIn("product added", response_json['message'])
 
