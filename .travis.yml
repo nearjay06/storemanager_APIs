@@ -10,6 +10,7 @@ install:
 
 script:
   - coverage run -m pytest
+  - coverage xml
   - coverage report
 
 after_success:
