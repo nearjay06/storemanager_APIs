@@ -37,7 +37,7 @@ def all_products():
         }
 
         products_list.append(product)
-        return jsonify({"message": "product added"}),200
+        return jsonify({"message": "product added"}),201
 
 #admin/store attendant can get a specific product
 @app.route("/api/v1/products/<product_id>", methods=['GET'])

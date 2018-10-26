@@ -19,10 +19,10 @@ class FlaskTest(unittest.TestCase):
   #                            content_type="application/json",
   #                             data=json.dumps(dict( product_name = "water",
   #                                                   product_price = 800)))
-  #   response_json = json.loads(response.data.decode())
-  #   response_json = response.get_json()
-  #   self.assertEqual(response.status_code,301)
-  #   self.assertEqual("invalid", response_json['message'])
+  #   # response_json = json.loads(response.data.decode())
+  #   # response_json = response.get_json()
+  #   self.assertEqual(response.status_code,201)
+  #   # self.assertEqual("invalid", response_json['message'])
 
 
   def test_get_specific_product(self):
